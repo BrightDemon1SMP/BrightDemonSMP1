@@ -42,21 +42,40 @@ nav ul li a:hover {
 
 /* ===================== HERO ===================== */
 .hero {
+  position: relative;
+  height: 100vh; /* Full-screen height for homepage */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('731a67fc-27e4-4e18-bd77-56299219fa43.png') no-repeat center center/cover;
+}
+
+.hero-overlay {
   text-align: center;
-  padding: 120px 20px; /* Increased height */
-  background: rgba(0, 0, 0, 0.0); /* Fully transparent background */
-  border-radius: 0; /* Remove any hero border if present */
+  background: rgba(0,0,0,0.35); /* Transparent overlay panel */
+  border: 2px solid rgba(0,255,204,0.6); /* Neon border */
+  border-radius: 15px;
+  padding: 60px 40px;
+  transition: all 0.4s ease-in-out;
 }
 
-.hero h1 {
-  font-size: 4rem; /* Bigger title */
+.hero-overlay:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 30px #00ffcc, 0 0 50px #ff00ff;
+}
+
+.hero-overlay h1 {
+  font-size: 4rem;
   color: #00ffcc;
-  text-shadow: 0 0 15px #00ffcc, 0 0 30px #ff00ff; /* Stronger glow */
+  text-shadow: 0 0 15px #00ffcc, 0 0 30px #ff00ff;
+  margin-bottom: 20px;
 }
 
-.hero p {
-  font-size: 1.5rem; /* Bigger subtitle */
+.hero-overlay p {
+  font-size: 1.5rem;
   margin-bottom: 30px;
+  color: #ffffff;
+  text-shadow: 0 0 5px #00ffcc, 0 0 10px #ff00ff;
 }
 
 /* Hero buttons */
@@ -65,14 +84,25 @@ nav ul li a:hover {
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 .hero-buttons .btn {
-  padding: 12px 25px; /* Bigger buttons */
+  padding: 12px 25px;
   min-width: 170px;
   font-size: 1.1rem;
   border-radius: 10px;
+  border: 2px solid #00ffcc;
+  background: rgba(0,0,0,0.3); /* semi-transparent buttons */
+  color: #00ffcc;
+  transition: all 0.3s ease;
 }
+.hero-buttons .btn:hover {
+  background: rgba(0,255,204,0.8);
+  color: #000;
+  box-shadow: 0 0 15px #00ffcc, 0 0 25px #ff00ff;
+  transform: translateY(-3px);
+}
+
 
 /* ===================== SECTIONS ===================== */
 .section {
