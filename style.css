@@ -1,4 +1,4 @@
-/* GENERAL STYLES */
+/* ===================== GENERAL STYLES ===================== */
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
@@ -12,7 +12,7 @@ a {
   color: #00ffcc;
 }
 
-/* NAVBAR */
+/* ===================== NAVBAR ===================== */
 nav {
   background: rgba(0,0,0,0.7);
   padding: 10px 0;
@@ -33,9 +33,14 @@ nav ul li {
 nav ul li a {
   color: #00ffcc;
   font-weight: bold;
+  transition: all 0.3s ease;
+}
+nav ul li a:hover {
+  color: #ff00ff;
+  text-shadow: 0 0 5px #ff00ff, 0 0 10px #00ffff;
 }
 
-/* HERO */
+/* ===================== HERO ===================== */
 .hero {
   text-align: center;
   padding: 80px 20px;
@@ -60,9 +65,10 @@ nav ul li a {
 .btn:hover {
   background: #00ffcc;
   color: #000;
+  box-shadow: 0 0 10px #00ffcc, 0 0 20px #ff00ff;
 }
 
-/* SECTIONS */
+/* ===================== SECTIONS ===================== */
 .section {
   background: rgba(0,0,0,0.6);
   margin: 20px auto;
@@ -72,9 +78,15 @@ nav ul li a {
 }
 .section h2 {
   color: #00ffcc;
+  text-shadow: 0 0 5px #00ffcc, 0 0 10px #ff00ff;
 }
 
-/* FAQ */
+/* ALT SECTION */
+.section.alt {
+  background: rgba(0,0,0,0.8);
+}
+
+/* ===================== FAQ ===================== */
 .faq-item {
   margin-bottom: 12px;
   border-radius: 6px;
@@ -101,7 +113,7 @@ nav ul li a {
   border-top: 1px solid rgba(255,255,255,0.05);
 }
 
-/* SERVER STATUS */
+/* ===================== SERVER STATUS ===================== */
 #server-status {
   background: rgba(0, 0, 0, 0.4);
   border-radius: 10px;
@@ -113,18 +125,33 @@ nav ul li a {
 #server-status h2 {
   color: #00ffcc;
   margin-bottom: 12px;
+  text-shadow: 0 0 5px #00ffcc, 0 0 10px #ff00ff;
 }
 #server-status p {
   color: #eaeaea;
   font-size: 1rem;
 }
 
-/* ALT SECTION */
-.section.alt {
-  background: rgba(0,0,0,0.8);
+/* ===================== RECENT UPDATES / CHANGELOG ===================== */
+#updates ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #eaeaea;
+}
+#updates li {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  animation: fadeIn 1s ease-in;
 }
 
-/* MEDIA QUERIES */
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===================== MEDIA QUERIES ===================== */
 @media(max-width:600px){
   .hero h1 {
     font-size: 2rem;
@@ -136,4 +163,3 @@ nav ul li a {
     margin: 10px 0;
   }
 }
-
