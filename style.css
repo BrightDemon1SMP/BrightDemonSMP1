@@ -43,39 +43,35 @@ nav ul li a:hover {
 /* ===================== HERO ===================== */
 .hero {
   text-align: center;
-  padding: 80px 20px;
-}
-.hero h1 {
-  font-size: 3rem;
-  color: #00ffcc;
-  text-shadow: 0 0 10px #00ffcc, 0 0 20px #ff00ff;
-}
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
+  padding: 120px 20px; /* Increased height */
+  background: rgba(0, 0, 0, 0.0); /* Fully transparent background */
+  border-radius: 0; /* Remove any hero border if present */
 }
 
-/* HERO BUTTONS */
+.hero h1 {
+  font-size: 4rem; /* Bigger title */
+  color: #00ffcc;
+  text-shadow: 0 0 15px #00ffcc, 0 0 30px #ff00ff; /* Stronger glow */
+}
+
+.hero p {
+  font-size: 1.5rem; /* Bigger subtitle */
+  margin-bottom: 30px;
+}
+
+/* Hero buttons */
 .hero-buttons {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 15px;
-  margin-top: 20px;
+  gap: 20px;
+  margin-top: 30px;
 }
 .hero-buttons .btn {
-  padding: 10px 20px;
-  border: 2px solid #00ffcc;
-  border-radius: 8px;
-  color: #00ffcc;
-  font-weight: bold;
-  min-width: 150px;
-  transition: all 0.3s ease;
-}
-.hero-buttons .btn:hover {
-  background: #00ffcc;
-  color: #000;
-  box-shadow: 0 0 10px #00ffcc, 0 0 20px #ff00ff;
+  padding: 12px 25px; /* Bigger buttons */
+  min-width: 170px;
+  font-size: 1.1rem;
+  border-radius: 10px;
 }
 
 /* ===================== SECTIONS ===================== */
