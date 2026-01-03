@@ -1,141 +1,77 @@
-/* RESET */
-* {
+/* GENERAL STYLES */
+body {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Arial', sans-serif;
+  background: url('bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #eaeaea;
 }
 
-body {
-  background: #050508;
-  color: #eaeaea;
-  line-height: 1.6;
+a {
+  text-decoration: none;
+  color: #00ffcc;
 }
 
 /* NAVBAR */
-.navbar {
+nav {
+  background: rgba(0,0,0,0.7);
+  padding: 10px 0;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 999;
+}
+nav ul {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  padding: 12px;
-  background: rgba(5,5,10,0.85);
-  backdrop-filter: blur(6px);
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-
-.navbar a {
-  color: #eaeaea;
-  text-decoration: none;
-  font-size: 0.9rem;
+nav ul li {
+  margin: 0 15px;
 }
-
-.navbar a:hover {
+nav ul li a {
   color: #00ffcc;
+  font-weight: bold;
 }
 
 /* HERO */
 .hero {
-  min-height: 100vh;
-  padding: 60px 20px;
   text-align: center;
-  background:
-    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)),
-    url("bg.jpg") center/cover no-repeat;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  padding: 80px 20px;
 }
-
-.neon-text {
+.hero h1 {
   font-size: 3rem;
-  color: #fff;
-  text-shadow:
-    0 0 10px #00ffcc,
-    0 0 20px #00ffcc,
-    0 0 40px #9b5cff;
-  animation: glow 6s infinite alternate;
+  color: #00ffcc;
+  text-shadow: 0 0 10px #00ffcc, 0 0 20px #ff00ff;
 }
-
-@keyframes glow {
-  0% { text-shadow: 0 0 10px #00ffcc; }
-  50% { text-shadow: 0 0 20px #00ffaa, 0 0 40px #9b5cff; }
-  100% { text-shadow: 0 0 10px #ff00ff; }
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
 }
-
-.tagline {
-  margin-top: 10px;
-  font-size: 1.1rem;
-  opacity: 0.85;
-}
-
-/* HERO BUTTONS */
-.hero-buttons {
-  margin-top: 30px;
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-}
-
-.hero-buttons button,
-.discord-btn {
-  padding: 12px 18px;
-  border: none;
-  border-radius: 6px;
-  background: #0f0f1a;
-  color: #fff;
-  cursor: pointer;
-  text-decoration: none;
+.btn {
+  padding: 10px 20px;
+  border: 2px solid #00ffcc;
+  border-radius: 8px;
+  color: #00ffcc;
+  font-weight: bold;
   transition: all 0.3s ease;
-  box-shadow: 0 0 10px rgba(0,255,204,0.3);
 }
-
-.hero-buttons button:hover,
-.discord-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 20px rgba(0,255,204,0.6);
+.btn:hover {
+  background: #00ffcc;
+  color: #000;
 }
 
 /* SECTIONS */
 .section {
-  padding: 80px 20px;
-  max-width: 900px;
-  margin: auto;
-}
-
-.section.alt {
-  background: #0b0b14;
-}
-
-.section h2 {
-  margin-bottom: 20px;
-  color: #00ffcc;
-}
-
-.section h3 {
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
-
-.section ul,
-.section ol {
-  margin-left: 20px;
-  margin-bottom: 15px;
-}
-
-.section li {
-  margin-bottom: 6px;
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
+  background: rgba(0,0,0,0.6);
+  margin: 20px auto;
+  max-width: 800px;
   padding: 20px;
-  background: #020205;
-  font-size: 0.85rem;
-  opacity: 0.7;
+  border-radius: 12px;
+}
+.section h2 {
+  color: #00ffcc;
 }
 
 /* FAQ */
@@ -145,7 +81,6 @@ footer {
   overflow: hidden;
   background: #0f0f1a;
 }
-
 .faq-question {
   width: 100%;
   padding: 14px;
@@ -156,11 +91,9 @@ footer {
   font-size: 1rem;
   cursor: pointer;
 }
-
 .faq-question:hover {
   background: rgba(0,255,204,0.08);
 }
-
 .faq-answer {
   display: none;
   padding: 14px;
@@ -168,24 +101,39 @@ footer {
   border-top: 1px solid rgba(255,255,255,0.05);
 }
 
-
-/* MOBILE */
-@media (max-width: 600px) {
-  .neon-text {
-    font-size: 2.2rem;
-  }
-
-  .navbar {
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-
-  .section {
-    padding: 60px 15px;
-  }
-  
-  .faq-question {
-  font-size: 1.05rem;
+/* SERVER STATUS */
+#server-status {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+  margin: 20px auto;
+  max-width: 400px;
+}
+#server-status h2 {
+  color: #00ffcc;
+  margin-bottom: 12px;
+}
+#server-status p {
+  color: #eaeaea;
+  font-size: 1rem;
 }
 
+/* ALT SECTION */
+.section.alt {
+  background: rgba(0,0,0,0.8);
 }
+
+/* MEDIA QUERIES */
+@media(max-width:600px){
+  .hero h1 {
+    font-size: 2rem;
+  }
+  nav ul {
+    flex-direction: column;
+  }
+  nav ul li {
+    margin: 10px 0;
+  }
+}
+
