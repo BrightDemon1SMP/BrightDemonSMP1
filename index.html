@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,7 +32,13 @@
   <section class="hero" id="home">
     <h1>BrightDemon SMP</h1>
     <p>Survival Minecraft server for Java & Bedrock</p>
-    <a href="https://discord.gg/ZbKpJAj5N" class="btn">Join Discord</a>
+
+    <!-- Buttons -->
+    <div class="hero-buttons">
+      <button class="btn" onclick="copyToClipboard('de2.freeminecrafthost.com:34544')">Copy Java IP</button>
+      <button class="btn" onclick="copyToClipboard('de2.freeminecrafthost.com:34544')">Copy Bedrock IP</button>
+      <a href="https://discord.gg/ZbKpJAj5N" class="btn">Join Discord</a>
+    </div>
   </section>
 
   <!-- JOIN SECTION -->
@@ -125,7 +130,14 @@
       });
     });
 
-    // Live Server Status (dummy example)
+    // Copy IP function
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        alert(`Copied: ${text}`);
+      });
+    }
+
+    // Live Server Status
     async function checkServer() {
       try {
         const isOnline = true; // Replace with real API later
