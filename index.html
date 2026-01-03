@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -90,6 +91,17 @@
     <p id="player-count"></p>
   </section>
 
+  <!-- RECENT UPDATES / CHANGELOG -->
+  <section class="section" id="updates">
+    <h2>Recent Updates</h2>
+    <ul id="update-list">
+      <li>New spawn area added!</li>
+      <li>Survival gameplay optimized for smoother experience</li>
+      <li>Custom mobs coming soon</li>
+      <li>Seasonal event planned for next weekend</li>
+    </ul>
+  </section>
+
   <!-- PROJECTS SECTION -->
   <section class="section" id="projects">
     <h2>Upcoming Projects</h2>
@@ -116,8 +128,8 @@
     // Live Server Status (dummy example)
     async function checkServer() {
       try {
-        const isOnline = true; // replace with real API later
-        const players = 5; // example number
+        const isOnline = true; // Replace with real API later
+        const players = 5; // Example player count
         const statusText = document.getElementById("status-text");
         const playerCount = document.getElementById("player-count");
         if(isOnline){
@@ -136,7 +148,18 @@
     }
     checkServer();
     setInterval(checkServer, 60000);
+
+    // Updates Ticker
+    const updates = document.querySelectorAll("#update-list li");
+    let currentUpdate = 0;
+    function rotateUpdates() {
+      updates.forEach((li, i) => {
+        li.style.display = i === currentUpdate ? "block" : "none";
+      });
+      currentUpdate = (currentUpdate + 1) % updates.length;
+    }
+    rotateUpdates();
+    setInterval(rotateUpdates, 3000);
   </script>
 </body>
 </html>
-
