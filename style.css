@@ -60,8 +60,9 @@ nav ul li a:hover {
 }
 
 .hero-overlay:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 30px #00ffcc, 0 0 50px #ff00ff;
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 0 40px rgba(0,255,204,0.8),
+              0 0 80px rgba(255,0,255,0.6);
 }
 
 .hero-overlay h1 {
@@ -208,4 +209,20 @@ nav ul li {
 nav ul li a {
   font-size: 0.9rem;
 }
+}
+
+@keyframes neonPulse {
+  0% {
+    text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+  }
+  50% {
+    text-shadow: 0 0 20px #00ffcc, 0 0 40px #ff00ff;
+  }
+  100% {
+    text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+  }
+}
+
+.hero-overlay h1 {
+  animation: neonPulse 3s infinite;
 }
