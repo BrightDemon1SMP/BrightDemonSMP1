@@ -234,3 +234,28 @@ nav ul li a {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Ambient background motion */
+body::before {
+  content: "";
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center,
+    rgba(0,255,204,0.06),
+    transparent 60%);
+  animation: ambientMove 20s linear infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes ambientMove {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
